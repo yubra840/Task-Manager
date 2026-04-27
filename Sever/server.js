@@ -19,7 +19,7 @@ console.log("JWT SECRET:", process.env.JWT_SECRET);
 
 const app = express();
 const corsOptions = {
-  origin: "https://task-manager-six-lake-86.vercel.app",
+  origin: "https://task-manager-hcmw.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
