@@ -20,7 +20,7 @@ function App() {
       <Routes>
 
         {/* ✅ SMART ROOT ROUTE */}
-        <Route path="/" element= {<Login />} />
+        <Route path="/" element= {<RootRedirect />} />
 
         {/* ✅ PUBLIC ROUTES */}
         <Route path="/login" element={<Login />} />
