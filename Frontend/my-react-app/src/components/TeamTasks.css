@@ -1,0 +1,22 @@
+.team-tasks {
+  margin-top: 20px;
+}
+
+.tasks-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.tasks-top button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+}

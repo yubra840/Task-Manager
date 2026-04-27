@@ -1,0 +1,69 @@
+.view-modal {
+  width: 600px;
+  background: #1e293b;
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.task-info p {
+  margin: 6px 0;
+}
+
+.comments-section {
+  margin-top: 15px;
+}
+
+.comments-list {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.comment {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.comment img,
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.comment span {
+  font-size: 11px;
+  color: gray;
+}
+
+.comment-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.comment-input textarea {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  background: #0f172a;
+  color: white;
+  border: none;
+}
+
+.comment-input button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

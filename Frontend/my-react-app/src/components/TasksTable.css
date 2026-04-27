@@ -1,0 +1,110 @@
+.tasks-table-container {
+  margin-top: 20px;
+}
+
+/* 🔥 SCROLL WRAPPER */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  background: #0f172a;
+}
+
+/* Optional: smooth scroll feel */
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+/* TABLE */
+.tasks-table {
+  width: 100%;
+  min-width: 800px; /* 🔥 forces scroll on small screens */
+  border-collapse: collapse;
+}
+
+thead {
+  background: #0f172a;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
+  white-space: nowrap; /* 🔥 prevents ugly wrapping */
+}
+
+tbody tr:hover {
+  background: #1e293b;
+}
+
+
+
+
+.tasks-table {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+
+
+th {
+  font-weight: bold;
+}
+
+
+/* Priority colors */
+.priority.low { color: #22c55e; }
+.priority.medium { color: #f59e0b; }
+.priority.high { color: #ef4444; }
+
+/* Status colors */
+.status.pending { color: gray; }
+.status.in_progress { color: #3b82f6; }
+.status.completed { color: #22c55e; }
+
+/* Assigned users grid */
+.assigned-users {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.assigned-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.assigned-user img,
+.default-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.assigned-name {
+  font-size: 13px;
+}
+
+/* Action icon */
+.action-icon {
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .assigned-users {
+    grid-template-columns: 1fr;
+  }
+}

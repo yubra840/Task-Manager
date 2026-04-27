@@ -1,0 +1,222 @@
+.page-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+
+}
+
+
+.contacts-container {
+color: white;
+    background: #0f172a;
+  padding: 10px;
+  width: 100%;
+}
+
+/* Tabs */
+.contacts-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contacts-tabs button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 6px;
+}
+
+.contacts-tabs .active {
+  background: #1976d2;
+  color: white;
+}
+
+/* Search */
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+    background: #1e293b;
+
+}
+
+/* =======================
+   USERS GRID (IMPORTANT FIX)
+======================= */
+.users-grid {
+  display: flex;
+  flex-wrap: wrap;        /* allows horizontal flow */
+  gap: 15px;
+  align-items: stretch;
+}
+
+/* =======================
+   USER CARD (HORIZONTAL STYLE)
+======================= */
+.user-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+  padding: 14px 16px;
+  background: #1e293b;
+  border-radius: 14px;
+  min-width: 280px;
+  flex: 1 1 280px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: 0.25s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* =======================
+   USER INFO SECTION
+======================= */
+.user-card img,
+.default-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.default-avatar {
+  font-size: 45px;
+  color: white;
+}
+
+.user-card p {
+  flex: 1;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =======================
+   ICON BUTTONS
+======================= */
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
+  user-select: none;
+}
+.add-icon,
+.remove-icon {
+  cursor: pointer;
+  font-size: 26px !important;
+  transition: 0.2s ease;
+}
+
+.add-icon {
+  color: #1976d2;
+}
+
+.add-icon:hover {
+  transform: scale(1.2);
+}
+
+.remove-icon {
+  color: #e53935;
+}
+
+.remove-icon:hover {
+  transform: scale(1.2);
+}
+
+/* =======================
+   ASSIGN BUTTON
+======================= */
+.assign-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #1976d2;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.assign-btn:hover {
+  background: #125aa3;
+  transform: scale(1.05);
+}
+
+/* =======================
+   MOBILE RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  .users-grid {
+    flex-direction: column;
+  }
+  .user-card {
+    align-items: flex-start;
+    flex: 1;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide sidebar by default */
+  .sidebar-container {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background: #0f172a;
+    z-index: 1000;
+    transition: 0.3s ease;
+  }
+
+  /* When open */
+  .sidebar-container.open {
+    left: 0;
+  }
+
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+
+  /* Stack layout */
+  .dashboard-page {
+    flex-direction: column;
+  }
+
+  /* Stats grid responsive */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

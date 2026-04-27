@@ -1,0 +1,73 @@
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex-shrink: 0; /* prevents shrinking */
+}
+
+/* Logo */
+.sidebar-logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Links container */
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Active link (VERY IMPORTANT) */
+.sidebar-link.active {
+  background: white;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Icon styling */
+.icon {
+  font-size: 22px;
+}
+.notif-link {
+  position: relative;
+}
+
+.notif-badge {
+  position: absolute;
+  right: 10px;
+
+  background: red;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

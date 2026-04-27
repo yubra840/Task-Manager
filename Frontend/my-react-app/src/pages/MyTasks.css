@@ -1,0 +1,38 @@
+.my-tasks-page {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.tasks-container {
+  padding: 10px;
+  background: #0f172a;
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+}
+.title-sidebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-task-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+
