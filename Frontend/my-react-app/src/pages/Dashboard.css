@@ -5,6 +5,10 @@
   min-height: 100vh;
 
 }
+.sidebar-container {
+  height: 100vh;
+}
+
 
 .dashboard-container {
   padding: 20px;

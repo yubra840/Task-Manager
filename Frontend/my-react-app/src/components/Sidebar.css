@@ -6,7 +6,7 @@
   flex-direction: column;
   padding: 20px;
   flex-shrink: 0; /* prevents shrinking */
-    height: 100vh;
+  height: 100vh;
 
 }
 
@@ -92,13 +92,13 @@
   border-radius: 10px;
 
   border: none;
-  background: rgb(157, 11, 11);
-  color: rgb(85, 10, 10);
+  background: rgb(189, 15, 15);
+  color: white;
   cursor: pointer;
 
   transition: 0.3s ease;
 }
 
 .logout-btn:hover {
-  background: rgba(255, 0, 0, 0.3);
+  background: rgb(127, 8, 8);
 }
