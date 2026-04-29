@@ -14,14 +14,14 @@
 .sidebar-logo {
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 /* Links container */
 .sidebar-links {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 /* Individual link */
@@ -92,8 +92,8 @@
   border-radius: 10px;
 
   border: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
+  background: rgb(157, 11, 11);
+  color: rgb(85, 10, 10);
   cursor: pointer;
 
   transition: 0.3s ease;
