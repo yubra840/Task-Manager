@@ -43,6 +43,8 @@
   gap: 15px;
   margin-top: 20px;
   justify-content: space-between;
+  border-top: 2px solid #1e509f;
+  border-bottom: 2px solid #1e509f;
 }
 
 .teams-nav button {
@@ -50,8 +52,9 @@
   border: none;
   color: white;
   cursor: pointer;
+  font-size: 26px;
 }
 
 .teams-nav .active {
-  border-bottom: 2px solid #2563eb;
+  border-bottom: 3px solid #0943c0;
 }
