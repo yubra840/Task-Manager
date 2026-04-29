@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
 import "./Sidebar.css";
 
 // Icons
@@ -8,15 +8,21 @@ import TaskIcon from "@mui/icons-material/Task";
 import GroupsIcon from "@mui/icons-material/Groups";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
-import API from "../services/api";
+import LogoutIcon from "@mui/icons-material/Logout";
+
+import { AuthContext } from "../context/AuthContext";
 
 export default function Sidebar() {
   const [unreadCount, setUnreadCount] = useState(0);
+
+  const { logout } = useContext(AuthContext); // 🔥 get logout
+  const navigate = useNavigate(); // 🔥 for redirect
 
   const fetchUnreadCount = async () => {
     try {
       const token = localStorage.getItem("token");
       const apiUrl = import.meta.env.VITE_APP_BACKEND_URL;
+
       const res = await fetch(`${apiUrl}/notifications/unread-count`, {
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -29,15 +35,20 @@ export default function Sidebar() {
   };
 
   useEffect(() => {
-  const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
+    if (!token) return;
 
-  if (!token) return; // 🚫 don't call API without token
+    fetchUnreadCount();
+    const interval = setInterval(fetchUnreadCount, 10000);
 
-  fetchUnreadCount();
+    return () => clearInterval(interval);
+  }, []);
 
-  const interval = setInterval(fetchUnreadCount, 10000);
-  return () => clearInterval(interval);
-}, []);
+  // 🔥 LOGOUT HANDLER
+  const handleLogout = () => {
+    logout();              // clear localStorage
+    navigate("/login");    // redirect
+  };
 
   return (
     <div className="sidebar">
@@ -66,16 +77,12 @@ export default function Sidebar() {
           <span>Contacts</span>
         </NavLink>
 
-        {/* 🔔 NOTIFICATIONS WITH BADGE */}
         <NavLink to="/notifications" className="sidebar-link notif-link">
           <NotificationsIcon className="icon" />
-
           <span>Notifications</span>
 
           {unreadCount > 0 && (
-            <span className="notif-badge">
-              {unreadCount}
-            </span>
+            <span className="notif-badge">{unreadCount}</span>
           )}
         </NavLink>
 
@@ -84,6 +91,14 @@ export default function Sidebar() {
           <span>Settings</span>
         </NavLink>
       </nav>
+
+      {/* 🔥 LOGOUT BUTTON AT BOTTOM */}
+      <div className="sidebar-logout">
+        <button onClick={handleLogout} className="logout-btn">
+          <LogoutIcon className="icon" />
+          <span>Logout</span>
+        </button>
+      </div>
     </div>
   );
 }
